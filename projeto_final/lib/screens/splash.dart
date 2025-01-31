@@ -6,32 +6,39 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
-      body: Center(
+    body: Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+            colors: [Colors.blue, Colors.purple],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+      child: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              '../eco-logo.png',
-              width: 150,
-              height: 150,
+            Icon(
+              Icons.rocket,
+              size: 100, color: Color.from(alpha: 1, red: 0.498, green: 0.824, blue: 0.973)
             ),
-            const SizedBox(height: 20),
-            const Text(
-              'EcoTracker',
+            SizedBox(height: 20),
+            Text(
+              'NASA Picture of the Day',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 20),
-            const CircularProgressIndicator(
+            SizedBox(height: 20),
+            CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
             ),
           ],
         ),
       ),
-    );
+    ),
+  );
   }
 }
